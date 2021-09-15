@@ -81,7 +81,7 @@ suite('Functional Tests', function() {
         assert.property(res.body.stockData[1], 'rel_likes');
         assert.equal(res.body.stockData[0].stock, 'GOOG');
         assert.equal(res.body.stockData[1].stock, 'MSFT');
-        assert.equal(res.body.stockData[0].rel_likes + res.body.stockData[1].rel_likes, 2);
+        assert.isAtMost(res.body.stockData[0].rel_likes + res.body.stockData[1].rel_likes, 2);
         done();
       });
     });
